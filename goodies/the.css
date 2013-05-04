@@ -50,7 +50,6 @@ article{
 }
 
 footer{
-	position:fixed;
 	vertical-align:top;
 	color:#FFF;
 	margin:0px;
@@ -101,6 +100,11 @@ footer a,footer p{
 		float:right;
 		clear:none;
 	}
+
+	footer{
+		position:fixed;
+	}
+
 }
 
 @media (max-width: 1250px){
@@ -109,10 +113,12 @@ footer a,footer p{
 	}
 	section{
 		max-width:100%;
-		padding-bottom: 90px;	
 	}
 	.social,.gittip{
 		float:left;
 		clear:both;
+	}
+	footer{
+		position:static;
 	}
 }
