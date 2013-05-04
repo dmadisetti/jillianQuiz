@@ -1,0 +1,118 @@
+body{
+	padding:0px;
+	margin:0px;
+}
+
+
+header{
+	margin: 0 auto;
+	padding:45px;
+	max-width:1250px;
+	min-height: 200px;	
+}
+
+header h1{
+	font-size: 20px;
+	text-transform:lowercase;
+	clear:none;
+	float:left;
+	margin: 15px 10px;
+}
+
+header h2{
+	font-size:14px;
+	clear:none;
+	float:left;
+	margin: 15px 5px;
+}
+
+header h3{
+	font-size:12px;
+	margin: 15px 5px;
+	clear:none;
+	float:right;
+}
+
+label a,a:active,a:hover,a:visited,a:link {
+	text-decoration: none;
+	color:#FFF;
+}
+
+
+section{
+	margin: 0 auto;
+	min-height:600px;
+}
+
+article{
+	margin:0px;
+	min-height: 200px;
+}
+
+footer{
+	position:fixed;
+	vertical-align:top;
+	color:#FFF;
+	margin:0px;
+	padding:0px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color:#282828;
+	width:100%;
+	overflow:hidden;
+	bottom:0;
+}
+
+.inner{
+	line-height: 14px;
+	margin: 0 auto;
+	overflow: visible;
+	min-height:45px;
+	max-width:1250px;
+}
+
+footer a,footer p{
+	padding: 10px;
+	margin: 0;
+	min-height: 25px;
+	float:left;
+	clear:none;
+}
+
+.social{
+	min-width:300px;
+	padding: 0px;
+	margin: 0;
+	min-height: 25px;
+}
+
+
+/* Woohoo! First time using media queries */
+
+@media (min-width: 1250px){
+	article{
+		padding:45px;
+		width:1160px;
+	}
+	section{
+		max-width:1250px;
+		padding-bottom: 45px;
+	}
+	.social{
+		float:right;
+		clear:none;
+	}
+}
+
+@media (max-width: 1250px){
+	article{
+		padding:25px;
+	}
+	section{
+		max-width:100%;
+		padding-bottom: 90px;	
+	}
+	.social,.gittip{
+		float:left;
+		clear:both;
+	}
+}
