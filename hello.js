@@ -8,7 +8,7 @@ app.use("/goodies", express.static(__dirname + '/goodies'));
 
 app.get('/', function(request, response) {
   fs.readFile( __dirname+'\\index.html', function (err, data) {
-    if (err) response.send('woops');
+    if (err) response.send(err);
     var code = data.toString();
     response.send(mustache.render(code));
   });
