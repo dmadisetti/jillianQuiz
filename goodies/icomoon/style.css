@@ -10,7 +10,7 @@
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:after {
+[data-icon]:before {
 	font-family: 'icomoon';
 	content: attr(data-icon);
 	speak: none;
@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon,.icon-cog, .icon-cogs, .icon-cog-2, .icon-cog-3, .icon-snowflake, .icon-cog-4 {
+.icon,.icon-cog, .icon-cogs, .icon-cog-2, .icon-cog-3, .icon-snowflake, .icon-cog-4, .icon-address-book {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;

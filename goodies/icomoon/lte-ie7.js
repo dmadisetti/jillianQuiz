@@ -11,7 +11,8 @@ window.onload = function() {
 			'icon-cog-2' : '&#xe002;',
 			'icon-cog-3' : '&#xe003;',
 			'icon-snowflake' : '&#xe004;',
-			'icon-cog-4' : '&#xe005;'
+			'icon-cog-4' : '&#xe005;',
+			'icon-address-book' : '&#xe006;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
