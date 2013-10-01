@@ -18,7 +18,8 @@ app.get('/:page', function(request, response) {
   fs.readFile( __dirname+'/'+request.params.page+'.html', function (err, data) {
     if (err){
     	response.status(404);
-    	response.send("4 oh 4")
+    	response.send("4 oh 4");
+    	return;
     }
     var code = data.toString();
     response.send(mustache.render(code));
