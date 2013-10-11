@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html itemtype="" itemscope="" lang="en-US">
+	<head>
+		<title>Research Shebang</title>
+		<link rel="stylesheet" type="text/css" href="/goodies/icomoon/style.css">
+		<link type="text/css" rel="stylesheet" href="/goodies/the.css" />
+	</head>
+	<body>
+		<header class="fixed">
+			<div class="bar">
+				<div class="title">
+					<h2 class="name">
+						AMRL		
+					</h2>
+					<i class="icon big">&#xe005;</i>
+				</div>
+				<nav class="navigation">
+					<a href="/" {{#index}}class="selected"{{/index}}>Home</a>
+					<a href="/news" {{#news}}class="selected"{{/news}}>News</a>
+					<a href="/members" {{#members}}class="selected"{{/members}}>Members</a>
+					<a href="/research" {{#research}}class="selected"{{/research}}>Research</a>
+					<a href="/projects" {{#projects}}class="selected"{{/projects}}>Projects</a>
+					<a href="/contact" {{#contact}}class="selected"{{/contact}}>Contact</a>
+				</nav>
+			</div>
+		</header>
+		<input class="search" placeholder="Search...">
+  		<section class="content">
+
+  			{{{code}}}
+
+  		</section>
+	</body>
+	<script src="/goodies/the.js"></script>
+</html>
