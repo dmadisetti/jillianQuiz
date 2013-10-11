@@ -113,6 +113,7 @@
 			color: #8a8683;
 			margin:0 auto;
 			max-width:1000px;
+			min-height: 1000px;
 		}
 
 		.label{
@@ -199,4 +200,49 @@
 			margin-top: 50px;
 			font-size:2em;
 			font-family: 'Helvetica','Open Sans', sans-serif;
+		}
+
+		.sidebar{
+			height:100%;
+			width:300px;
+			background-color: #999;
+			position: fixed;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			top:0;
+			z-index: -1;
+		}
+
+		.sidepart{
+			float:right;
+			width:670px;
+		}
+
+		footer{
+			bottom:0;
+			vertical-align: top;
+			color: #FFF;
+			margin: 0px;
+			padding: 0px;
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			background-color: #282828;
+			width: 100%;
+			overflow: hidden;
+			background-image: -moz-linear-gradient(top, #222222, #111111);
+			background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+			background-image: -webkit-linear-gradient(top, #222222, #111111);
+			background-image: -o-linear-gradient(top, #222222, #111111);
+			background-image: linear-gradient(to bottom, #222222, #111111);
+			background-repeat: repeat-x;
+			border-color: #252525;
+		}
+
+		footer nav{
+			line-height: 14px;
+			margin: 0 auto;
+			max-width: 1250px;
+			overflow: visible;
+			min-height: 45px;
+			padding: 15px; 
 		}
