@@ -138,3 +138,65 @@
 			width:1000px;
 			height:500px;
 		}
+
+		.description{
+			margin:15px;
+			display:block;
+			min-height: 400px;
+			color:#000;
+		}
+
+		.address{
+			float:left;
+			width:425px;
+		}
+
+		.map{
+			width:425px;
+			height:350px; 
+			margin:0;
+			overflow: hidden;
+			border:0;
+			float:left;
+		}
+
+		.em{
+			line-height: 0;
+			margin:1em;
+			padding:0;
+			font-size:2em;
+			font-family: 'Helvetica','Open Sans', sans-serif;
+		}
+
+		.bullet{
+			font-size: 4em;
+			display: block;
+			float: left;
+			clear: none;
+			line-height: 0;
+			padding: 40px 10px;
+			background-color: #AAA;
+			border-radius: 40px;
+			margin:10px;
+			border-style: solid;
+			border-width: 1px;
+		}
+
+		.m {
+			float: left;
+			clear: left;
+			width: 100%;
+		}
+
+		.mperson{
+			line-height: 0;
+			padding:0;
+			font-size:1em;
+			font-family: 'Helvetica','Open Sans', sans-serif;			
+		}
+
+		address{
+			margin-top: 50px;
+			font-size:2em;
+			font-family: 'Helvetica','Open Sans', sans-serif;
+		}
