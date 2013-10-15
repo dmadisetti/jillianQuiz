@@ -119,7 +119,6 @@
 		.label{
 			position:relative;
 			padding:50px 0;
-			height:350px;
 			font-family: 'Helvetica','Open Sans', sans-serif;
 			font-size: 2em;
 			color:#000;
@@ -216,7 +215,12 @@
 
 		.sidepart{
 			float:right;
-			width:670px;
+			width:650px;
+			margin:25px;
+		}
+
+		.sidepart img{
+			float: left;
 		}
 
 		footer{
@@ -245,4 +249,21 @@
 			overflow: visible;
 			min-height: 45px;
 			padding: 15px; 
+		}
+
+		.topic{
+			width:100%;
+			height: 75px;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			padding: 15px;
+			text-align: center;
+			font-size:1em;
+			font-family: 'Helvetica','Open Sans', sans-serif;			
+			color: #000;
+		}
+
+		.topic:nth-child(1){
+			margin-top: 60px;
 		}
