@@ -131,14 +131,25 @@
 			width:1000px;
 		}
 
-		.slideshow img{
-			display:none;
+		.slideshow{
+			height:500px;
 		}
 
+		.slideshow img{
+			display:none;
+			position:absolute;
+		}
+
+		.slideshow img.top,
 		.slideshow img.active{
 			display:block;
 			width:1000px;
 			height:500px;
+			z-index:-1;
+		}
+
+		.slideshow img.top{
+			z-index:1;
 		}
 
 		.description{
