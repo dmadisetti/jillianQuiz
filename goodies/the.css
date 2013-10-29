@@ -195,10 +195,25 @@
 			border-width: 1px;
 		}
 
+		.mtype{
+			width:935px;
+		}
+
 		.m {
-			float: left;
+			margin-left: 50px;
 			clear: left;
 			width: 100%;
+		}
+
+		.m + .m{
+			border-top: 1px solid black;
+			margin-top:4px;
+		}
+
+		.mname {
+			font-size:1.5em;
+			font-family: 'Open Sans', sans-serif;
+			text-decoration: underline;
 		}
 
 		.mperson{
@@ -226,7 +241,7 @@
 		}
 
 		.article{
-			float:right;
+			padding-left: 300px;
 			width:650px;
 			margin:25px;
 			display:none;
@@ -306,4 +321,23 @@
 
 		.topic:hover div{
 			border-left: 20px solid #525252;
+		}
+
+		@media (max-width: 1000px){
+			.bar{
+				height:60px;
+				margin:0 auto;
+				width:1000px;
+				background-color: #1b1b1b;
+				background-image: -moz-linear-gradient(top, #222222, #111111);
+				background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+				background-image: -webkit-linear-gradient(top, #222222, #111111);
+				background-image: -o-linear-gradient(top, #222222, #111111);
+				background-image: linear-gradient(to bottom, #222222, #111111);
+				background-repeat: repeat-x;
+				border-color: #252525;		
+			}
+			.sidebar{
+				position: absolute;
+			}
 		}
