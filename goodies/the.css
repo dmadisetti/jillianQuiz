@@ -216,7 +216,7 @@
 			margin-top: 10px;
 		}
 
-		.mperson{
+		.mperson,.piece h3{
 			line-height: 0;
 			padding:0;
 			font-size:1em;
@@ -322,6 +322,28 @@
 
 		.topic:hover div{
 			border-left: 20px solid #525252;
+		}
+
+		.news {
+			margin-top:30px;
+			-moz-column-count: 2;
+			-moz-column-gap: 20px;
+			-webkit-column-count: 2;
+			-webkit-column-gap: 20px;
+			column-count: 2;
+			column-gap: 20px;
+			color:#000;
+		}
+
+		.piece{
+			float:left;
+			width:200px;
+			margin: 10px 0 0 10px;
+			display:block;
+		}
+
+		.piece h3{
+			padding-bottom:5px;
 		}
 
 		@media (max-width: 1000px){
