@@ -3,7 +3,7 @@ var express = require('express')
 ,page = {}
 ,app = express.createServer()
 ,has = function(variable){
-  fs.readFile( __dirname+'/template/'+variable+'.html', function (err, data) {
+  fs.readFile( __dirname+'/templates/'+variable+'.html', function (err, data) {
     if (err) page[variable]="There was an error";
     else page[variable] = data.toString();
   });
@@ -20,8 +20,8 @@ app.get('/', function(request, response) {
 });
 
 app.get('/:page', function(request, response) {
-    render = page[request.params.page] || "Looks like there was a problem, or questionaire not found.";
-    response.send(render);
+  render = page[request.params.page] || "Looks like there was a problem, or questionaire not found.";
+  response.send(render);
 });
 
 var port = process.env.PORT || 5000;
