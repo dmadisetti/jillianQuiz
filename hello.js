@@ -1,40 +1,28 @@
 var express = require('express')
 ,fs = require('fs')
-,mustache = require('mustache')
-,stash
-,render = function(response,page,variable){
-  var page = page || 'index',
-  variable= variable || {'index':1};
-  fs.readFile( __dirname+'/templates/'+page+'.html', function (err, data) {
-    if (err){
-      response.status(404);
-      response.send("4 oh 4");
-      return;
-    }
-    variable['code'] = data.toString();
-    response.send(mustache.render(stash,variable));
+,page = {}
+,app = express.createServer()
+,has = function(variable){
+  fs.readFile( __dirname+'/template/'+variable+'.html', function (err, data) {
+    if (err) page[variable]="There was an error";
+    else page[variable] = data.toString();
   });
 }
-,app = express.createServer();
 
-fs.readFile( __dirname+'/stash.html', function (err, data) {
-  if (err) stash="There was an error";
-  else stash = data.toString();
-});
+has('one');
+has('two');
+has('three');
 
 app.use("/goodies", express.static(__dirname + '/goodies'));
 
 app.get('/', function(request, response) {
-  render(response);
+  response.send('Check out one of the questionaires instead.');
 });
 
 app.get('/:page', function(request, response) {
-  page = request.params.page;
-  variable = {};
-  variable[page] = 1;
-  render(response,page,variable);
+    render = page[request.params.page] || "Looks like there was a problem, or questionaire not found.";
+    response.send(render);
 });
-
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
