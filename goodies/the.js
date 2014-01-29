@@ -1,88 +1,97 @@
-var Slideshow = function(){
-	
-	// Some declaration
-	this.radios = document.getElementsByName('slideshow');
-	this.pictures = document.getElementsByName('slide');
-	this.display = 0;
-	this.interval = 150;
-	this.fadeInterval = 1000;
-	this.fadeChange=1/this.fadeInterval;
-	this.fade = this.fadeInterval;
-	this.time = this.interval;
-
-	// Helper functions
-	this.change=function(value){
-		this.pictures[this.display].className="top";
-		this.pictures[this.display].style.opacity = 1;
-		this.next = value;
-		this.pictures[value].className="active";
-		this.pictures[value].style.opacity = 1;
-		this.radios[value].checked=true;
-		this.time = this.interval;
-		window.clearInterval(this.fader || 0);
-		this.fader = window.setInterval(function(){
-				slideshow.dissolve();
-		},this.fadeIteration);
-	}
-	this.dissolve= function(){
-		if(this.fade--){
-			this.pictures[this.display].style.opacity -= this.fadeChange;
-		}else{
-			this.pictures[this.display].className = "";
-			slideshow.display = slideshow.next;
-			this.fade = this.fadeInterval;
-			window.clearInterval(slideshow.fader || 0);
-		}
-	}
-	this.clicker = function(e){
-		slideshow.change(parseInt(this.value));
-	}
-
-	// Set all the radios to respond to click
-	var i= this.radios.length;
-	while(i--){this.radios[i].onclick=this.clicker;}
-
-	// Set her ticking
-	window.setInterval(function(){
-		if(!slideshow.time--) slideshow.change(slideshow.display + 1 == slideshow.radios.length ? 0 : slideshow.display + 1);
-	},100);	
+// label support
+// optimized from http://www.chriscassell.net/log/2004/12/19/add_label_click.html
+// cause I got lazy
+var labels = []
+, inputs = []
+, q = 1
+, a = answers[0]
+, correct = 0
+, addLabelFocus = function (){
+  var item = document.getElementById(this.getAttribute("for"))
+  ,radios = document.getElementsByName(item.getAttribute("name"));
+  item.focus();
+  for (i = 0; i < radios.length; i++){
+      if (radios[i]["checked"] && radios[i] != item.getAttribute("id")){
+        radios[i]["checked"] = false;
+      break;
+      }
+  }
+  item["checked"] = true;
+}
+, question = function (){
+  labels = as[q - 1].getElementsByTagName("label");
+  inputs = document.getElementsByName('a'+ q++);
+  for (i = 0; i < inputs.length; i++){
+      labels[i].addEventListener("click", readify, false);
+  }  
+}
+, readify = function(){
+  btn.className = 'ready';
+  btn.innerText = 'Submit';
+}
+, qs = document.getElementsByName('q')
+, as = document.getElementsByClassName('answers')
+, wrappers = document.getElementsByClassName('wrapper')
+, intro = document.getElementById('intro')
+, cheapDisable = document.getElementById('cheapDisable')
+, results = document.getElementById('results')
+, btn = document.getElementById('btn');
+btn.onclick = function(){
+  switch(btn.className){
+    case 'ready':
+      if(inputs[a].checked) win();
+      else lose();
+      btn.className = 'next';
+      btn.innerText = 'Next';
+      cheapDisable.className = "show";
+      break;
+    case 'restart':
+      window.location = "";
+      break;
+    case 'next':
+      cheapDisable.className = "";
+      if(q > qs.length){
+        end();
+        return;
+      }
+      btn.className = '';
+      btn.innerText = 'Choose';
+      qs[q - 2].checked = false;
+      qs[q - 1].checked = true;
+      wrappers[q - 2].classList.remove('show');
+      wrappers[q - 1].classList.add('show');
+      a = answers[q - 1];
+      question();
+      break;
+    default:
+      break;
+  }
+}
+intro.onclick = function(){
+  this.classList.remove('show');
 }
 
-var Articles = function(){
-	
-	// Some declaration
-	this.articles = document.getElementsByClassName('article');
-	this.tabs = document.getElementsByClassName('topic');
-	this.display = 0;
-
-	// Helper functions
-	this.change=function(value){
-		this.articles[this.display].id = "";
-		this.tabs[this.display].id = "";
-		this.display = value;
-		this.tabs[this.display].id = "selected";
-		this.articles[this.display].id = "active";
-	}
-	this.clicker = function(e){
-		var evt = e ? e:window.event;
-		if (evt.preventDefault) evt.preventDefault();
-		articles.change(parseInt(evt.target.parentNode.attributes.value.value));
-	}
-
-	// Set all the tabs to respond to click
-	var i= this.tabs.length;
-	while(i--){this.tabs[i].onclick=this.clicker;}
-
+win = function(){
+  correct++;
+  qs[q - 2].classList.add("right");
+  as[q - 2].classList.add("right");
 }
 
-switch(window.location.pathname){
-	case '/':
-		var slideshow = new Slideshow();
-		break;
-	case '/research':
-	case '/projects':
-		var articles = new Articles();
-		break;
-	default:
-		break;
+lose=function(){
+  qs[q - 2].classList.add("wrong");
+  as[q - 2].classList.add("wrong");
 }
+
+end = function(){
+  btn.innerText = 'Restart';
+  btn.className = 'restart';
+  wrappers[q - 2].classList.remove('show');
+  results.getElementsByClassName('question')[0].innerText = "Looks like you got " + correct + " out of " + as.length+". You're cool Rams. Real cool.";
+  results.classList.add("show");
+}
+
+for (i = 0; i < labels.length; i++){
+    labels[i].onclick = addLabelFocus;
+}
+
+question()

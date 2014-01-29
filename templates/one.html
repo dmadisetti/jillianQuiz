@@ -1,1 +1,54 @@
-one.html
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="/goodies/the.css" />
+		<link rel="stylesheet" href="/goodies/icons/style.css"></head>
+		<script>
+			var answers = [{{#questions}}{{answer}},{{/questions}}0];
+		</script>
+	</head>
+	<body>
+		<div id="intro" class="show">
+			<div class="cover">
+				{{intro}}
+			</div>
+		</div>
+		<div class="container">
+			<header class="nav">
+				{{f.reset}}
+				{{#questions}}
+					<input type="radio" name="q" value="{{f.count}}" id="q{{f.count}}" {{#f.first}}checked{{/f.first}}>
+					<div>{{f.count}}</div>
+					{{f.next}}
+				{{/questions}}
+			</header>
+			{{f.reset}}
+			{{#questions}}
+				{{f.resetq}}
+				<div class="wrapper {{#f.first}}show{{/f.first}}">
+					<div class="question">
+						{{question}}
+					</div>
+					<div class="answers">
+						{{#answers}}
+						<input type="radio" name="a{{f.count}}" value="{{f.countq}}" id="a{{f.count}}{{f.countq}}">
+						<label for="a{{f.count}}{{f.countq}}"><div class="radio"></div>{{.}}</label>
+						{{f.nextq}}
+						{{/answers}}
+					</div>
+				</div>
+				{{f.next}}
+			{{/questions}}
+			<div id="cheapDisable"></div>
+			<div id="results" class="wrapper">
+				<div class="question">
+					Is this real life??
+				</div>
+			</div>
+			<footer id="btn">
+				Choose
+			</footer>
+		</div>
+	</body>
+	<script src="goodies/the.js"></script>
+</html>
