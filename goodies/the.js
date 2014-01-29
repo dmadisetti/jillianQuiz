@@ -86,7 +86,7 @@ end = function(){
   btn.innerText = 'Restart';
   btn.className = 'restart';
   wrappers[q - 2].classList.remove('show');
-  results.getElementsByClassName('question')[0].innerText = "Looks like you got " + correct + " out of " + as.length+". You're cool Rams. Real cool.";
+  results.getElementsByClassName('question')[0].innerText = "Looks like you got " + correct + " out of " + as.length+".";
   results.classList.add("show");
 }
 

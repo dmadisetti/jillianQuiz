@@ -1,0 +1,21 @@
+{
+	"intro":"Rhyming and Syllable Recognition. Please click to continue"
+	,"questions":[
+		{"question":"What does 'Cat' not rhyme with?"
+		 ,"answers":["bat","sat","bug","mat"]
+		 ,"answer":2}
+		,{"question":"What does 'Fling' rhyme with?"
+		,"answers":["blight","sight","sing","truck"]
+		,"answer":2}
+		,{"question":"How many small words are in 'sandpaper'?"
+		,"answers":["one","two","three","four"]
+		,"answer":3}
+		,{"question":"How many small words are in 'mailman'?"
+		,"answers":["one","two","three","four"]
+		,"answer":2}
+		,{"question":"How many small sound parts are in 'dinosaur'?"
+		,"answers":["one","two","three","four"]
+		,"answer":2}
+	]
+}
+
