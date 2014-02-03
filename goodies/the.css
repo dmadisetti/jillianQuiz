@@ -5,7 +5,7 @@ a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+fieldset, form, .label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td, 
 head, article, nav, section, aside {
 	border: 0;
@@ -82,7 +82,7 @@ input{
 	height:239px;
 }
 
-.answers label{
+.answers .label{
 	display:block;
 	font-family: 'Open Sans', sans-serif;
 	width:450px;
@@ -100,7 +100,7 @@ input{
 	margin-right: 10px;
 }
 
-.answers input:checked + label .radio{
+.answers input:checked + .label .radio{
 	background-color: #777;
 }
 
@@ -114,7 +114,7 @@ input{
 	border-color: #77DD77;
 }
 
-.answers.right input:checked + label .radio{
+.answers.right input:checked + .label .radio{
 	background-color: #03C03C;
 	border-color: #03C03C;
 }
@@ -129,7 +129,7 @@ input{
 	border-color:  #FF6961;
 }
 
-.answers.wrong input:checked + label .radio{
+.answers.wrong input:checked + .label .radio{
 	background-color: #C23B22;
 	border-color:  #C23B22;
 }

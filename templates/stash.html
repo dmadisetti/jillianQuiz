@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Questionaire</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="/goodies/the.css" />
@@ -49,20 +50,20 @@
 					<div class="answers {{#audio}}audio{{/audio}}">
 						{{#answers}}
 						<input type="radio" name="a{{f.count}}" value="{{f.countq}}" id="a{{f.count}}{{f.countq}}">
-						<label for="a{{f.count}}{{f.countq}}"><div class="radio">
+						<div class="label" for="a{{f.count}}{{f.countq}}"><div class="radio">
 						</div>
 						{{^audio}}
 							{{.}}
 						{{/audio}}
 						{{#audio}}
-							<img src="/goodies/play.png">
+							<img src="/goodies/play.png" alt="play">
 							<audio  preload="auto">
 								<source src="/goodies/audio/{{.}}.mp3" type="audio/mpeg">
 								<source src="/goodies/audio/{{.}}.ogg" type="audio/ogg">
 								<source src="/goodies/audio/{{.}}.wav" type="audio/wav">
 							</audio>
 						{{/audio}}
-						</label>
+						</div>
 						{{f.nextq}}
 						{{/answers}}
 					</div>

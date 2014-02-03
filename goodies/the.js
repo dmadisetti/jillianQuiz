@@ -8,7 +8,7 @@ var labels = []
 , a = answers[0]
 , correct = 0
 , question = function (){
-  labels = as[q - 1].getElementsByTagName("label");
+  labels = as[q - 1].getElementsByClassName("label");
   inputs = document.getElementsByName('a'+ q++);
   for (i = 0; i < inputs.length; i++){
       labels[i].addEventListener("click", readify, false);
