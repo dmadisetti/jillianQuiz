@@ -1,5 +1,5 @@
 {
-	"intro":"Rhyming and Syllable Recognition. Please click to continue"
+	"intro":"Phoneme and Sound Recognition. Please click to continue"
 	,"questions":[
 		{"question":"If the word 'bat' was changed to 'bot', how would it be pronounced?"
 		 ,"answers":["bet","beat","boat","bot"]
