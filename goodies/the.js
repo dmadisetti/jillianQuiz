@@ -1,6 +1,7 @@
 // label support
 // optimized from http://www.chriscassell.net/log/2004/12/19/add_label_click.html
 // cause I got lazy
+window.onload = function(){
 var labels = []
 , inputs = []
 , q = 1
@@ -65,12 +66,13 @@ var labels = []
 , audio = document.getElementById('speech')
 , replay = document.getElementById('replay')
 , speech = audio != null
-, speak = function(){
-  restart(audio);
-}
 ,check = function(){
-  if(!audio.ended){
+  if((playing && !audio.ended) || !play){
     window.setTimeout(check,10);
+  }else if(!playing){
+      playing = true;
+      restart(audio);
+      window.setTimeout(check,10);
   }else{
     intro.classList.remove('show');
     t = new Date().getTime() + 61000;
@@ -89,7 +91,9 @@ var labels = []
 }
 , t = 0
 , dt = 61000
-, tid = 0;
+, tid = 0
+, play = false
+, playing = false;
 
 btn.onclick = function(){
   switch(btn.className){
@@ -125,13 +129,18 @@ btn.onclick = function(){
 intro.onclick = function(){
   if(!speech) this.classList.remove('show');
   else {
-    restart(audio);
     check();
   }
 }
 
-if(speech) replay.onclick = function(){
-  restart(audio);
+if(speech){ 
+  replay.onclick = function(){
+    restart(audio);
+  }
+  audio.oncanplaythrough = function(){
+    play = true;
+  }
 }
 
 question();
+}
