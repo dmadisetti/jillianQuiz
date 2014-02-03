@@ -67,12 +67,8 @@ var labels = []
 , replay = document.getElementById('replay')
 , speech = audio != null
 ,check = function(){
-  if((playing && !audio.ended) || !play){
+  if(!audio.ended){
     window.setTimeout(check,10);
-  }else if(!playing){
-      playing = true;
-      restart(audio);
-      window.setTimeout(check,10);
   }else{
     intro.classList.remove('show');
     t = new Date().getTime() + 61000;
@@ -91,9 +87,7 @@ var labels = []
 }
 , t = 0
 , dt = 61000
-, tid = 0
-, play = false
-, playing = false;
+, tid = 0;
 
 btn.onclick = function(){
   switch(btn.className){
@@ -129,17 +123,13 @@ btn.onclick = function(){
 intro.onclick = function(){
   if(!speech) this.classList.remove('show');
   else {
+    restart(audio);
     check();
   }
 }
 
-if(speech){ 
-  replay.onclick = function(){
-    restart(audio);
-  }
-  audio.oncanplaythrough = function(){
-    play = true;
-  }
+if(speech) replay.onclick = function(){
+  restart(audio);
 }
 
 question();

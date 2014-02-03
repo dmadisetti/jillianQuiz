@@ -11,9 +11,9 @@
 	</head>
 	<body>
 		{{#speech}}
-			<audio id="speech" preload="auto" autobuffer="true">
-				<source src="/goodies/audio/{{speech}}.mp3" type="audio/mpeg">
+			<audio id="speech" preload="auto">
 				<source src="/goodies/audio/{{speech}}.ogg" type="audio/ogg">
+				<source src="/goodies/audio/{{speech}}.mp3" type="audio/mpeg">
 				<source src="/goodies/audio/{{speech}}.wav" type="audio/wav">
 				Your browser does not support the audio tag.
 			</audio>
