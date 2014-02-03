@@ -15,7 +15,7 @@ var labels = []
   }  
 }
 , readify = function(){
-  var item = document.getElementById(this.getAttribute("for"))
+  var item = document.getElementById(this.getAttribute("data-for"))
   ,radios = document.getElementsByName(item.getAttribute("name"));
   item.focus();
   btn.className = 'ready';

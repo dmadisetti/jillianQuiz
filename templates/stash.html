@@ -50,7 +50,7 @@
 					<div class="answers {{#audio}}audio{{/audio}}">
 						{{#answers}}
 						<input type="radio" name="a{{f.count}}" value="{{f.countq}}" id="a{{f.count}}{{f.countq}}">
-						<div class="label" for="a{{f.count}}{{f.countq}}"><div class="radio">
+						<div class="label" data-for="a{{f.count}}{{f.countq}}"><div class="radio">
 						</div>
 						{{^audio}}
 							{{.}}
