@@ -18,7 +18,7 @@ var labels = []
   ,radios = document.getElementsByName(item.getAttribute("name"));
   item.focus();
   btn.className = 'ready';
-  btn.innerText = 'Submit';
+  btn.innerHTML = 'Submit';
   for (i = 0; i < radios.length; i++){
       if (radios[i]["checked"] && radios[i] != item.getAttribute("id")){
         radios[i]["checked"] = false;
@@ -52,10 +52,10 @@ var labels = []
     audio.pause()
     t = 0;
   }
-  btn.innerText = 'Restart';
+  btn.innerHTML = 'Restart';
   btn.className = 'restart';
   wrappers[q - 2].classList.remove('show');
-  results.getElementsByClassName('question')[0].innerText = "Looks like you got " + correct + " out of " + as.length+".";
+  results.getElementsByClassName('question')[0].innerHTML = "Looks like you got " + correct + " out of " + as.length+".";
   results.classList.add("show");
 }
 , restart = function(audio){
@@ -83,7 +83,7 @@ var labels = []
   if(dt <= 0){
     end();
   }else{
-    time.innerText = Math.floor(dt / 60000) + ":" + Math.floor((dt%60000)/10000) + "" + Math.floor((dt%60000)/1000) % 10;
+    time.innerHTML = Math.floor(dt / 60000) + ":" + Math.floor((dt%60000)/10000) + "" + Math.floor((dt%60000)/1000) % 10;
     window.setTimeout(timer,10);    
   }
 }
@@ -97,7 +97,7 @@ btn.onclick = function(){
       if(inputs[a].checked) win();
       else lose();
       btn.className = 'next';
-      btn.innerText = 'Next';
+      btn.innerHTML = 'Next';
       cheapDisable.className = "show";
       break;
     case 'restart':
@@ -110,7 +110,7 @@ btn.onclick = function(){
         return;
       }
       btn.className = '';
-      btn.innerText = 'Choose';
+      btn.innerHTML = 'Choose';
       qs[q - 2].checked = false;
       qs[q - 1].checked = true;
       wrappers[q - 2].classList.remove('show');
