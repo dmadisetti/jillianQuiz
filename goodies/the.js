@@ -48,8 +48,8 @@ var labels = []
   as[q - 2].classList.add("wrong");
 }
 , end = function(){
-  if(speech){ 
-    replay.remove();
+  if(speech){
+    replay.parentNode.removeChild(replay);
     audio.pause()
     t = 0;
   }
@@ -99,7 +99,7 @@ btn.onclick = function(){
       cheapDisable.className = "show";
       break;
     case 'restart':
-      window.location = "";
+      window.location = window.location;
       break;
     case 'next':
       cheapDisable.className = "";
