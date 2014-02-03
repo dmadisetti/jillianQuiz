@@ -1,0 +1,28 @@
+{
+	"intro":"Listening Comprehension. Click to start quiz. A short sound clip will play followed by some questions. There will be one minute to answer all questions."
+	,"speech":"speech"
+	,"questions":[
+		{"question":"Why does he want a new job?"
+		 ,"answers":["He is tired","He is poor","He is not happy","He is anxious"]
+		 ,"answer":0}
+		,{"question":"Where does he want to apply?"
+		,"answers":["The Dentist's Office","The Doctor's Office","The Space Center","The Education Department"]
+		,"answer":2}
+		,{"question":"Where is he applying?"
+		,"answers":["His home","The Education Department","The Healthcare Center","The Technology Center"]
+		,"answer":1}
+		,{"question":"What are the benefits?"
+		,"answers":["A large salary","An exciting atmosphere","Free travel expenses","Morning hours"]
+		,"answer":3}
+		,{"question":"Who will contact him?"
+		,"answers":["The boss","The Director's Assistant","His Mother","His Dog"]
+		,"answer":1}
+		,{"question":"Did he get the job?"
+		,"answers":["No","Yes"]
+		,"answer":1}
+		,{"question":"What will he do after he answers the phone?"
+		,"answers":["He will speak to his friends","He will talk to his parents","He will run with his dog","He will declare a new planet"]
+		,"answer":0}
+	]
+}
+

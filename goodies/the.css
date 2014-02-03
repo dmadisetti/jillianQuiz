@@ -65,6 +65,13 @@ input{
 	background-color: #EFEFEF;
 }
 
+#replay{
+	text-align: center;
+	background-color: #DDD;
+	padding: 5px;
+	font-family: 'Open Sans', sans-serif;
+}
+
 .question{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1.2em;

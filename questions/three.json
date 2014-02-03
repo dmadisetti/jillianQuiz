@@ -1,0 +1,25 @@
+{
+	"intro":"Rhyming and Syllable Recognition. Please click to continue"
+	,"questions":[
+		{"question":"If the word 'bat' was changed to 'bot', how would it be pronounced?"
+		 ,"answers":["bet","beat","boat","bot"]
+		 ,"answer":3
+		 ,"audio":true}
+		,{"question":"In question one, what letter was changed?"
+		,"answers":["a","b","t","e"]
+		,"answer":0}
+		,{"question":"Given the word 'dog', change the 'o' to 'u' and select the proper pronunciation."
+		,"answers":["doog","dug","dag","lug"]
+		,"answer":1
+		,"audio":true}
+		,{"question":"Given the word 'wish', change the 'w' to 'd' and select the proper "
+		,"answers":["wash","wush","fish","dish"]
+		,"answer":3
+		,"audio":true}
+		,{"question":"Given the word 'apple', add the letter 'd' to the front of the word."
+		,"answers":["bapple","dappled","dapple","babbled"]
+		,"answer":2
+		,"audio":true}
+	]
+}
+

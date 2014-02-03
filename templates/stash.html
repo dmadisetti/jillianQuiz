@@ -8,6 +8,13 @@
 		</script>
 	</head>
 	<body>
+		{{#speech}}
+			<audio id="speech">
+				<source src="/goodies/audio/{{speech}}.mp3" type="audio/mpeg">
+				<source src="/goodies/audio/{{speech}}.ogg" type="audio/ogg">
+				Your browser does not support the audio tag.
+			</audio>
+		{{/speech}}
 		<div id="intro" class="show">
 			<div class="cover">
 				{{intro}}
@@ -22,6 +29,13 @@
 					{{f.next}}
 				{{/questions}}
 			</header>
+			{{#speech}}
+				<div id="replay">Click to Replay. Time Remaining
+					<div id="timer">
+						1:00
+					</div>
+				</div>
+			{{/speech}}
 			{{f.reset}}
 			{{#questions}}
 				{{f.resetq}}
@@ -29,10 +43,23 @@
 					<div class="question">
 						{{question}}
 					</div>
-					<div class="answers">
+					<div class="answers {{#audio}}audio{{/audio}}">
 						{{#answers}}
 						<input type="radio" name="a{{f.count}}" value="{{f.countq}}" id="a{{f.count}}{{f.countq}}">
-						<label for="a{{f.count}}{{f.countq}}"><div class="radio"></div>{{.}}</label>
+						<label for="a{{f.count}}{{f.countq}}"><div class="radio">
+						</div>
+						{{^audio}}
+							{{.}}
+						{{/audio}}
+						{{#audio}}
+							<img src="/goodies/play.gif">
+							<audio>
+								<source src="/goodies/audio/{{.}}.mp3" type="audio/mpeg">
+								<source src="/goodies/audio/{{.}}.ogg" type="audio/ogg">
+								<source src="/goodies/audio/{{.}}.wav" type="audio/wav">
+							</audio>
+						{{/audio}}
+						</label>
 						{{f.nextq}}
 						{{/answers}}
 					</div>

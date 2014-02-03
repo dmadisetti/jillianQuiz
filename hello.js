@@ -1,16 +1,12 @@
 var express = require('express')
 ,mustache = require('mustache')
 ,fs = require('fs')
-,page = {}
 ,question = {}
+,stash = ""
 ,app = express.createServer()
 ,has = function(variable){
-  fs.readFile( __dirname+'/templates/'+variable+'.html', function (err, data) {
-    if (err) page[variable]="There was an error";
-    else page[variable] = data.toString();
-  });
   fs.readFile( __dirname+'/questions/'+variable+'.json', function (err, data) {
-    if (err) page[variable]="There was an error";
+    if (err) stash="There was an error. Email contact@dlynamadisetti.com";
     else question[variable] = JSON.parse(data);
   });
 },f={
@@ -44,6 +40,11 @@ var express = require('express')
 },counter=1
 ,q=1;
 
+fs.readFile( __dirname+'/templates/stash.html', function (err, data) {
+  if (err) stash="There was an error";
+  else stash = data.toString();
+});
+
 has('one');
 has('two');
 has('three');
@@ -55,8 +56,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/:page', function(request, response) {
-  var stash = page[request.params.page] || "Looks like there was a problem, or questionaire not found."
-  ,variable = question[request.params.page] || "Looks like there was a problem, or questionaire not found.";
+  var variable = question[request.params.page] || "Looks like there was a problem, or questionaire not found.";
   variable.f = f;
   response.send(mustache.render(stash,variable));
 });
